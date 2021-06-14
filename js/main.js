@@ -1,5 +1,7 @@
 let menuBtn = document.getElementById('menu-btn');
 let menuAdaptive = document.getElementById('menu-adaptive');
+let dropdownItemsBtn = document.querySelectorAll('.dropdown-items__item--title');
+let dropdownItemsBody = document.querySelectorAll('.dropdown-items__item--text');
 
 menuBtn.addEventListener('click', () => {
     if(menuBtn.classList.contains('is-active')){
@@ -11,6 +13,18 @@ menuBtn.addEventListener('click', () => {
         menuAdaptive.style.display = 'block';
         menuBtn.classList.add('is-active'); 
     }
+})
+
+dropdownItemsBtn.forEach((el, id) => {
+  el.addEventListener('click', () => {
+    if(el.classList.contains('active')){
+      el.classList.remove('active');
+      dropdownItemsBody[id].classList.remove('active');
+    } else {
+      el.classList.add('active');
+      dropdownItemsBody[id].classList.add('active');
+    }
+  })
 })
     
 
@@ -51,3 +65,4 @@ $('.slider-block__partners').slick({
       }
     ]
 });
+
