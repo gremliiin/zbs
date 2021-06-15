@@ -149,6 +149,97 @@ img {
   color: #1B548D;
 }
 
+.header-dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 150%;
+  background-color: #fff;
+  word-wrap: break-word;
+  border-radius: 5px;
+  left: -25%;
+}
+
+.header-dropdown-menu__list--link {
+  display: block;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 15px;
+  color: #000;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header-dropdown-menu__list--link:hover {
+  background-color: azure;
+  color: #000;
+}
+
+.header__top--item:hover .header-dropdown-menu {
+  display: block;
+}
+
+.adaptive-down {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+.adaptive-down::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-image: url("../images/drop-down-white.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+      -ms-transform: translateY(-50%) rotate(-90deg);
+          transform: translateY(-50%) rotate(-90deg);
+  z-index: 16;
+}
+
+.adaptive-li {
+  display: block;
+  text-align: center;
+  width: 50%;
+}
+
+.adaptive-down.active {
+  display: block;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+.adaptive-down.active::before {
+  -webkit-transform: translateY(-50%) rotate(0deg);
+      -ms-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg);
+}
+
+.header-drop-down-adaptive {
+  display: none;
+  padding: 10px 0;
+}
+
+.header-drop-down-adaptive__list--item + .header-drop-down-adaptive__list--item {
+  margin-top: 5px;
+}
+
+.adaptive-down.active + .header-drop-down-adaptive {
+  display: block;
+}
+
 .header {
   color: #fff;
   position: relative;
@@ -310,7 +401,7 @@ img {
 }
 
 .header__top--link {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.8);

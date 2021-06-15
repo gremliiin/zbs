@@ -2,6 +2,17 @@ let menuBtn = document.getElementById('menu-btn');
 let menuAdaptive = document.getElementById('menu-adaptive');
 let dropdownItemsBtn = document.querySelectorAll('.dropdown-items__item--title');
 let dropdownItemsBody = document.querySelectorAll('.dropdown-items__item--text');
+let dropdownAdaptiveBtn = document.querySelectorAll('.adaptive-down');
+
+dropdownAdaptiveBtn.forEach(el => {
+  el.addEventListener('click', () => {
+    if(el.classList.contains('active')){
+      el.classList.remove('active');
+    } else {
+      el.classList.add('active');
+    }
+  });
+})
 
 menuBtn.addEventListener('click', () => {
     if(menuBtn.classList.contains('is-active')){
